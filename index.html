@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!-- 
+
+Double Pendulums
+6/23/24
+
+Click on the number at the top and type to change the
+number of pendulums (higher = better quality but slower)
+
+About:
+This simulates thousands of double pendulums simuntaneously.
+They all start off very close together with, with only 5
+tenthousandths of a radian apart from the furthest pendulum.
+As time goes on, they separate a lot. They are called "chaotic"
+because they have this property when they off in very similar
+positions, but have very different results later on.
+
+Credits:
+This program was heavily inspired by a visualization in a
+video by Pezzza's Work:
+https://www.youtube.com/watch?v=9gQQAO4I1Ck
+
+-->
+
+<html>
+<head>
+    <title>Double Pendulum</title>
+    <meta charset="UTF-8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            overflow: hidden;
+            translate: 0px 40px;
+            margin: 0;
+            background-color: rgb(20, 20, 20);
+        }
+        body * {
+            position: absolute;
+        }
+        #canvas {
+            /* background-color: red; */
+            /* filter: blur(0.5px); */
+            transform: scale(0.5, 0.5);
+            transform-origin: top left;
+        }
+
+        #wrapper {
+            background-color: transparent;
+            /*  */
+            top: 10px;
+            width: 200px;
+            height: 25px;
+            left: calc(50% - 100px);
+            
+            border-style: solid;
+            border-color: rgb(240, 240, 240);
+            border-radius: 50px;
+        }
+        #points-input {
+            background-color: transparent;
+
+            left: 20px;
+            top: 3px;
+            width: 170px;
+            height: 17px;
+
+            color: rgb(240, 240, 240);
+            font-family: 'Glegoo', monospace;
+            font-weight: 700;
+            text-align: center;
+            font-size: 1.2em;
+
+            border-style: none;
+            outline-style: none;
+        }
+    </style>
+</head>
+    <body>
+        <canvas id='canvas'></canvas>
+
+        <div id='wrapper'>
+            <input id='points-input' type='number' value='4000'>
+        </div>
+
+        <script src='./setup.js'></script>
+        <script src='./pendulum.js'></script>
+        <script src='./index.js'></script>
+    </body>
+</html>
